@@ -77,6 +77,7 @@ namespace net_ef_videogame.Models
         }
 
 
+        //rimozione gioco
         public static void removegame(int id)
         {
             using (VideogameContext Context = new VideogameContext())
