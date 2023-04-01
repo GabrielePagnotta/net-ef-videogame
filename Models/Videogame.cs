@@ -10,7 +10,7 @@ namespace net_ef_videogame.Models
     public class Videogame
     {
         
-        public int VideogameId { get; set; }
+        public int  VideogameId { get; set; }
         public string Name { get; set; }
         public string Overview { get; set; }
         public DateTime Release_date { get; set; }

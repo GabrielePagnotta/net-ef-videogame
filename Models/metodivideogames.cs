@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace net_ef_videogame.Models
 {
-    public static  class Metodivideogames
+    public static class Metodivideogames
     {
-        
 
-        public static void addvideogame(string name,string ow,DateTime date,int sh)
+
+        public static void addvideogame(string name, string ow, DateTime date, int sh)
         {
             using (VideogameContext context = new VideogameContext())
             {
                 Videogame nuovovideogioco = new Videogame
                 {
-                    
+
                     Name = name,
                     Overview = ow,
                     Release_date = date,
@@ -26,7 +26,7 @@ namespace net_ef_videogame.Models
 
                 };
                 context.Add(nuovovideogioco);
-                context .SaveChanges();
+                context.SaveChanges();
             }
         }
         public static void searchvideogames(int id)
@@ -47,7 +47,7 @@ namespace net_ef_videogame.Models
         }
         public static void addsoftwarehouse()
         {
-            using(VideogameContext context = new VideogameContext())
+            using (VideogameContext context = new VideogameContext())
             {
                 Software_house nintendo = new Software_house
                 {
@@ -75,7 +75,24 @@ namespace net_ef_videogame.Models
                 context.SaveChanges();
             }
         }
-       }
+
+
+        public static void removegame(int id)
+        {
+            using (VideogameContext Context = new VideogameContext())
+            {
+
+                Videogame deletegioco = Context.Videogames.Where(videogame => videogame.VideogameId == id).First();
+                if (deletegioco != null)
+                {
+                    Context.Remove(deletegioco);
+                    Context.SaveChanges();
+                    
+                }
+            }
+
+        }
 
     }
+}
 

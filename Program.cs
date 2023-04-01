@@ -23,6 +23,12 @@ catch(Exception ex)
     Environment.Exit(0);
 }*/
 
-Console.WriteLine("inserisci l'id da cercare");
+/*Console.WriteLine("inserisci l'id da cercare");
 var inputsearch =Convert.ToInt32( Console.ReadLine());
-Metodivideogames.searchvideogames(inputsearch);
+Metodivideogames.searchvideogames(inputsearch);*/
+
+//cancellazione videogioco
+
+Console.WriteLine("Inserisci l'id del gioco da cancellare");
+int  inputdelete =Convert.ToInt32( Console.ReadLine());
+Metodivideogames.removegame(inputdelete);
