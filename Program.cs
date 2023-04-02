@@ -23,12 +23,30 @@ catch(Exception ex)
     Environment.Exit(0);
 }*/
 
-/*Console.WriteLine("inserisci l'id da cercare");
-var inputsearch =Convert.ToInt32( Console.ReadLine());
-Metodivideogames.searchvideogames(inputsearch);*/
+
+//ricerca in base al nome o l'id
+Console.WriteLine("inserisci se ricercare tramite nome o id");
+string inputchoose = Console.ReadLine();
+
+if("id" == inputchoose)
+{
+    Console.WriteLine("inserisci l'id");
+    var inputsearch =Convert.ToInt32( Console.ReadLine());
+    Metodivideogames.searchvideogamesbyid(inputsearch);
+}else if ("nome" == inputchoose)
+{
+    Console.WriteLine("inserisci il nome");
+    var inputsearch = Console.ReadLine();
+    Metodivideogames.searchvideogamesbyname(inputsearch);
+}
+else
+{
+    Console.WriteLine("l'elemento inserito non è stato riconosciuto");
+    Environment.Exit(0);
+}
 
 //cancellazione videogioco
 
-Console.WriteLine("Inserisci l'id del gioco da cancellare");
+/*Console.WriteLine("Inserisci l'id del gioco da cancellare");
 int  inputdelete =Convert.ToInt32( Console.ReadLine());
-Metodivideogames.removegame(inputdelete);
+Metodivideogames.removegame(inputdelete);*/

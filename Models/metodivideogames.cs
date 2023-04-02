@@ -29,7 +29,7 @@ namespace net_ef_videogame.Models
                 context.SaveChanges();
             }
         }
-        public static void searchvideogames(int id)
+        public static void searchvideogamesbyid(int id)
         {
             using (VideogameContext Context = new VideogameContext())
             {
@@ -43,6 +43,25 @@ namespace net_ef_videogame.Models
                 {
                     Console.WriteLine($"No videogame found with id {id}");
                 }
+
+            }
+        }
+
+        public static void searchvideogamesbyname(string name)
+        {
+            using (VideogameContext Context = new VideogameContext())
+            {
+
+                Videogame gioco = Context.Videogames.Where(videogame => videogame.Name == name).First();
+                if (gioco != null)
+                {
+                    Console.WriteLine($" [ID : {gioco.VideogameId}, NOME:{gioco.Name}, DESCRIZIONE: {gioco.Overview}, DATA DI RILASCIO:{gioco.Release_date}]");
+                }
+                else
+                {
+                    Console.WriteLine($"No videogame found with this name: {name}");
+                }
+
             }
         }
         public static void addsoftwarehouse()
